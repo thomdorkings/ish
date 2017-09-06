@@ -1,0 +1,27 @@
+/* Common Styles */
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Structure */
+
+body {
+	background: #FCFBF6;
+}
+
+header {
+}
+
+@media only screen and (min-width: 601px) {
+}
+
+
+@media only screen and (min-width: 993px) {
+}
