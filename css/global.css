@@ -1,4 +1,4 @@
-/* Common Styles */
+/* ---------- Basic ---------- */
 
 a {
 	color: inherit;
@@ -10,13 +10,11 @@ img {
 	display: block;
 }
 
-/* Structure */
-
 body {
 	background: whiteFFF;
 }
 
-/* Sidebar */
+/* ---------- Sidebar ---------- */
 
 header {
    position: relative;
@@ -258,7 +256,7 @@ header .bottom .small-print a {
 }
 
 
-/* Drawers */
+/* ---------- Slide-out drawers ---------- */
 
 .drawer {
    position: fixed;
@@ -314,7 +312,7 @@ header .bottom .small-print a {
    padding-bottom: 40px;
 }
 
-/* Menu Drawer */
+/* ---------- Menu Drawer ---------- */
 
 #menu .menu>ul {
    padding-bottom: 5vh;
@@ -345,7 +343,7 @@ header .bottom .small-print a {
    border-bottom: 1px solid white;
 }
 
-/* Search Drawer */
+/* ---------- Search Drawer ---------- */
 
 #search>.main,
 #designer>.main {
@@ -462,7 +460,7 @@ header .bottom .small-print a {
    margin-top: 5px;
 }
 
-/* Find a designer drawer */
+/* ---------- Find a designer drawer ---------- */
 
 #designer>.main {
    background: #E3DFDC;
@@ -546,7 +544,7 @@ main {
 }
 
 
-/* ---------- BLACK THEME ---------- */
+/* ---------- BLACK THEME - add any elements here that need to change colour ---------- */
 
 body.black {
    background: black;
@@ -598,7 +596,7 @@ body.black .drawer>.main>.dark>ul>li>a:after {
    border-color: white;
 }
 
-/* Theme Transitions */
+/* ---------- Theme Transitions - add any elements here that are included in the theme above ---------- */
 
 body,
 header>.logo,
@@ -609,7 +607,7 @@ header .bottom .switch {
 }
 
 
-/* Testing fixed height divs on homepage */
+/* ---------- Testing fixed height divs on homepage ---------- */
 
 main>div>div {
    background: #ccc;
@@ -625,5 +623,3 @@ main>div+div>div+div {
    margin-top: 3vh;
    height: 30vh;
 }
-
-/* End of test */
