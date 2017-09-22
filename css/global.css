@@ -13,15 +13,617 @@ img {
 /* Structure */
 
 body {
-	background: #FCFBF6;
+	background: whiteFFF;
 }
+
+/* Sidebar */
 
 header {
+   position: relative;
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 992px) {
+   header {
+      height: 100vh;
+   }
+}
+
+header>.buttons {
+   margin: 0;
+   position: fixed;
+   top:0;
+   left:0;
+   z-index: 900;
+   padding-left: 20px;
+   height: 50px;
+}
+
+@media only screen and (min-width: 992px) {
+   header>.buttons {
+      position: relative;
+      padding: 20px 0 0 20px;
+      height: auto;
+   }
+}
+
+@media only screen and (min-width: 1200px) {
+   header>.buttons {
+      padding: 20px 0 0 30px;
+   }
+}
+
+header>.buttons>a {
+   height: 50px;
+   padding: 20px 0;
+   width: 30px;
+   text-align: center;
+   display: inline-block;
+   position: relative;
+   z-index: 9999;
+}
+
+header>.buttons>a+a {
+   margin-left: 10px;
+}
+
+header>.buttons>a>span {
+   display: block;
+   height: 2px;
+   background: black;
+   margin-bottom: 3px;
+   transition: background 0.6s ease;
+}
+
+header>.buttons>a>svg {
+   display: block;
+   height: 15px;
+   margin: -1px auto 0 auto;
+   fill: black;
+   transition: fill 0.6s ease;
+}
+
+.mobile-header-bg {
+   width: 100%;
+   position: fixed;
+   background: white;
+   z-index: 600;
+   height: 50px;
+}
+
+header>.logo {
+   background: black;
+   color: white;
+   text-transform: uppercase;
+   font-family: "Calibre", sans-serif;
+   letter-spacing: 0.18em;
+   font-weight: 500;
+   font-size: 15px;
+   display: block;
+   height: 50px;
+   line-height: 55px;
+   text-align: center;
+   position: fixed;
+   top: 50px;
+   left: 0;
+   width: 100%;
+   z-index: 700;
+}
+
+@media only screen and (min-width: 992px) {
+   header>.logo {
+      position: relative;
+      max-width: 300px;
+      top: auto;
+      margin: 8vh -7.5px 8vh -7.5px;
+   }
+}
+
+.menu {
+   padding: 0 20px;
+}
+
+header .menu {
+   display: none;
+}
+
+@media only screen and (min-width: 992px) {
+   header .menu {
+      display: block;
+   }
+}
+
+@media only screen and (min-width: 1200px) {
+   .menu {
+      padding: 0 30px;
+   }
+}
+
+.menu h3 {
+   color: #666666;
+}
+
+.menu ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   font-size: 34px;
+}
+
+.menu ul li {
+   padding: 8px 0;
+}
+
+.menu>ul>li a {
+   position: relative;
+}
+
+.menu>ul>li>a:after {
+   content:'';
+   display: block;
+   position: absolute;
+   bottom: 7px;
+   left: 0;
+   height: 1px;
+   border-bottom: 1px solid black;
+   width: 0;
+   transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.menu>ul>li>a:hover:after {
+   width: 100%;
+}
+
+header .bottom {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   padding: 27.5px;
+   width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+   header .bottom {
+      padding: 37.5px;
+   }
+}
+
+header .bottom .switch {
+   display: block;
+   position: relative;
+   opacity: 0.5;
+}
+
+@media only screen and (min-width: 992px) {
+   header .bottom .switch {
+      max-width: 270px;
+   }
+}
+
+header .bottom .switch span {
+   font-size: 30px;
+   color: #666;
+}
+
+header .bottom .switch img {
+   height: 30px;
+   transform: rotate(90deg);
+   position: absolute;
+   bottom: 0;
+   right: 0;
+}
+
+header .bottom .social {
+   margin-top: 40px;
+}
+
+header .bottom .social h3 {
+   color: #666;
+}
+
+header .bottom .social ul {
+   list-style: none;
+}
+
+header .bottom .social ul li {
+   display: inline-block;
+}
+
+header .bottom .social a {
+   display: block;
+   transition: all 0.3s ease;
+   margin-right: 20px;
+}
+
+header .bottom .social a:hover {
+   transform: scale(1.2);
+}
+
+header .bottom .social a svg {
+   height: 14px;
+   margin: auto;
+}
+
+header .bottom .social a svg g {
+   fill: black;
+}
+
+header .bottom .small-print {
+   margin-top: 30px;
+   color: #666;
+}
+
+header .bottom .small-print a {
+   display: inline-block;
+   margin-right: 15px;
 }
 
 
-@media only screen and (min-width: 993px) {
+/* Drawers */
+
+.drawer {
+   position: fixed;
+   top:0;
+   left:0;
+   bottom:0;
+   right:0;
+   z-index: 800;
+   visibility: hidden;
+   transition: all 0s ease 1s;
 }
+
+.drawer:target {
+   visibility: visible;
+   transition: all 0s ease 0s;
+}
+
+.drawer>.main {
+   height: 100vh;
+   overflow: auto;
+   -webkit-overflow-scrolling: touch;
+   background: white;
+   transform: translateX(-100%);
+   transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.drawer>.overlay {
+   display: block;
+   position: absolute;
+   top:0;
+   left:0;
+   bottom:0;
+   right:0;
+   background: rgba(0,0,0,0.3);
+   opacity: 0;
+   transition: opacity 1s ease;
+}
+
+.drawer:target>.overlay {
+   opacity: 1;
+}
+
+.drawer:target>.main {
+   transform: translateX(0);
+}
+
+#menu>.main {
+   padding-top: 6vh;
+}
+
+.drawer>.main>.menu {
+   padding-top: 40px;
+   padding-bottom: 40px;
+}
+
+/* Menu Drawer */
+
+#menu .menu>ul {
+   padding-bottom: 5vh;
+}
+
+#menu .menu>a {
+   margin-right: 20px;
+   color: #666;
+}
+
+.drawer>.main>.menu.dark {
+   background: black;
+   color: white;
+   margin: 0 -7.5px;
+}
+
+.drawer>.main>.menu.dark:after {
+   content: '';
+   display: block;
+   top: 100%;
+   height: 15vw;
+   left: 0;
+   width: 100%;
+   background: black;
+}
+
+.drawer>.main>.menu.dark>ul>li>a:after {
+   border-bottom: 1px solid white;
+}
+
+/* Search Drawer */
+
+#search>.main,
+#designer>.main {
+   padding: 60px 20px 0 20px;
+}
+
+@media only screen and (min-width: 992px) {
+   #search>.main,
+   #designer>.main {
+     padding: 80px 30px 0 30px;
+   }
+}
+
+@media only screen and (min-width: 1200px) {
+   #search>.main,
+   #designer>.main {
+     padding: 80px 35px 0 35px;
+   }
+}
+
+#search h3 {
+   font-size: 1.6em;
+}
+
+#search form {
+   width: 100%;
+   margin-bottom: 35px;
+}
+
+#search form>input,
+#search form>button {
+   height: 50px;
+   line-height: 50px;
+   border: none;
+   font-size: 0.7em;
+   display: inline-block;
+   outline: none;
+   position: relative;
+}
+
+#search form>input {
+   width: 70%;
+   background: #E3DFDC;
+   padding-left: 20px;
+   letter-spacing: 0.1em;
+}
+
+#search form>button {
+   width: 30%;
+   color: white;
+   background: black;
+   top: 2px;
+}
+
+#search .main>ul {
+   list-style: none;
+   padding: 0;
+}
+
+#search .main>ul.tags>li {
+   display: inline-block;
+}
+
+#search .main>ul.tags>li>a:after {
+   content: ',';
+}
+
+#search .main>ul.tags>li>a {
+   color: #666;
+   font-size: 1.3em;
+   line-height: 1.5em;
+}
+
+#search hr {
+   border: none;
+   border-bottom: 1px solid #ddd;
+   margin-top: 60px;
+}
+
+#search ul.editions>li>a {
+   display: block;
+   height: 100px;
+   background: black;
+   color: white;
+   margin-bottom: 10px;
+}
+
+#search ul.editions>li>a>div {
+   display: block;
+   float: left;
+}
+
+#search ul.editions>li>a>.image {
+   width: 30%;
+   height: 100px;
+   background-size: cover;
+   background-position: 50% 50%;
+}
+
+#search ul.editions>li>a>.text {
+   display: inline-block;
+   width: 70%;
+   height: 100px;
+   padding: 25px;
+   font-size: 0.9em;
+}
+
+#search ul.editions>li>a>.text>h4 {
+   margin: 0;
+   color: #666;
+}
+
+#search ul.editions>li>a>.text>p {
+   margin-top: 5px;
+}
+
+/* Find a designer drawer */
+
+#designer>.main {
+   background: #E3DFDC;
+}
+
+#designer>.main>h3 {
+   font-size: 1.6em;
+}
+
+#designer>.main>form>select,
+#designer>.main>form>input {
+   display: block;
+   width: 100%;
+   height: 50px;
+   -webkit-appearance: none;
+   border-radius: 0; 
+   margin-bottom: 10px;
+   border: none;
+   background: white;
+   padding: 20px;
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   font-size: 12px;
+   font-weight: normal;
+   font-family: "Calibre", sans-serif;
+   font-weight: 500;
+}
+
+#designer>.main>form>select {
+   background: url('../img/arrow2.svg') 95% 50% no-repeat white;
+   background-size: 20px 10px;
+}
+
+#designer>.main>form>textarea {
+   border: none;
+   width: 100%;
+   margin-bottom: 10px;
+   display: block;
+   -webkit-appearance: none;
+   background: white;
+   padding: 20px;
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   font-size: 12px;
+   font-weight: normal;
+   font-family: "Calibre", sans-serif;
+   font-weight: 500;
+}
+
+#designer>.main>form>button {
+   border: none;
+   width: 100%;
+   margin-bottom: 10px;
+   display: block;
+   -webkit-appearance: none;
+   color: white;
+   background: black;
+   height: 50px;
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   font-size: 12px;
+   font-weight: normal;
+   font-family: "Calibre", sans-serif;
+   font-weight: 500;
+}
+
+
+/* Content area */
+
+main {
+   margin-top: 90px;
+}
+
+@media only screen and (min-width: 992px) {
+   main {
+      margin-top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+   }
+}
+
+
+/* ---------- BLACK THEME ---------- */
+
+body.black {
+   background: black;
+   color: white;
+}
+
+body.black header>.buttons>a>span {
+   background: white;
+}
+
+body.black header>.buttons>a>svg {
+   fill: white;
+}
+
+body.black header>.logo {
+   background: white;
+   color: black;
+}
+
+body.black .menu>ul>li>a:after {
+   border-color: white;
+}
+
+body.black header .bottom .social a svg g {
+   fill: white;
+}
+
+body.black .mobile-header-bg {
+   background: black;
+}
+
+body.black header .bottom .switch {
+   opacity: 1;
+}
+
+body.black .drawer>.main>.menu {
+   color: black;
+}
+
+body.black .drawer>.main>.menu>ul>li>a:after {
+   border-color: black;
+}
+
+body.black .drawer>.main>.dark {
+   color: white;
+}
+
+body.black .drawer>.main>.dark>ul>li>a:after {
+   border-color: white;
+}
+
+/* Theme Transitions */
+
+body,
+header>.logo,
+header .bottom .social a svg g,
+.mobile-header-bg,
+header .bottom .switch {
+   transition: all 1s ease;
+}
+
+
+/* Testing fixed height divs on homepage */
+
+main>div>div {
+   background: #ccc;
+   margin: 3vh 1vh;
+   height: 94vh;
+}
+
+main>div+div>div {
+   height: 61vh;
+}
+
+main>div+div>div+div {
+   margin-top: 3vh;
+   height: 30vh;
+}
+
+/* End of test */

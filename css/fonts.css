@@ -1,5 +1,38 @@
+@font-face {
+	font-family: 'Calibre';
+	src: url('../fonts/Calibre-Medium.eot');
+	src: url('../fonts/Calibre-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Calibre-Medium.woff') format('woff'),
+		url('../fonts/Calibre-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Calibre';
+	src: url('../fonts/Calibre-Regular.eot');
+	src: url('../fonts/Calibre-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Calibre-Regular.woff') format('woff'),
+		url('../fonts/Calibre-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
+   font-family: "adobe-garamond-pro", serif;
+   font-weight: 400;
+   -webkit-font-smoothing: antialiased;
 }
 	
-h1 {
+h1,h2,h3,h4 {
+   font-weight: normal;
+}
+
+.small-caps {
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   font-size: 10px;
+   font-weight: normal;
+   font-family: "Calibre", sans-serif;
+   font-weight: 500;
 }
