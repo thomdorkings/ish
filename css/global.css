@@ -649,6 +649,11 @@ main>div>.tile {
 .feature>.caption>h4 {
    margin: 0 0 20px 0;
    font-size: 1.3em;
+   color: black;
+}
+
+.feature.dark>.caption>h4 {
+   color: white;
 }
 
 .feature>.caption>p {
@@ -665,6 +670,7 @@ main>div>.tile {
 .newsletter>h4 {
    font-size: 1.2em;
    margin-top: 0;
+   color: black;
 }
 
 .newsletter>p {
@@ -716,6 +722,10 @@ main>div>.tile {
 .promo>h4 {
    font-size: 1.8em;
    margin: 0 0 10px 0;
+}
+
+.promo>p {
+   color: #999;
 }
 
 
