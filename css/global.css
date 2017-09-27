@@ -553,7 +553,6 @@ header .bottom .small-print a {
    border: 15px solid white;
    pointer-events: none;
    z-index: 700;
-   transition: border-color 1s ease;
 }
 
 @media only screen and (min-width: 992px) {
@@ -628,6 +627,83 @@ main>div>.tile:last-of-type {
    }
 }
 
+/* ---------- Share ---------- */
+
+#share {
+   position: fixed;
+   top: 50%;
+   right: 0;
+   width: 100%;
+   max-width: 480px;
+   z-index: 800;
+   transform: translateY(-50%) translateX(100%);
+   transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+   padding: 40px 70px 40px 40px;
+   background: black;
+   color: white;
+}
+
+#share:target {
+   transform: translateY(-50%) translateX(0); 
+}
+
+.share,
+#share>a {
+   position: fixed;
+   top: 50%;
+   right: 0;
+   transform: rotate(-90deg) translateX(21%);
+   width: auto;
+   padding: 10px 40px;
+   margin-right: -45px;
+}
+
+.share {
+   background: white;
+   color: black;
+   z-index: 700;
+}
+
+#share>a {
+   color: white;
+}
+
+#share>h3 {
+   margin: 0 0 20px 0;
+}
+
+#share>.url {
+   padding: 10px;
+   background: white;
+   color: black;
+   display: block;
+   font-size: 0.8em;
+   color: #666;
+   overflow: auto;
+}
+
+#share>ul {
+   margin: 30px 0 0 0;
+   list-style: none;
+   padding: 0;
+}
+
+#share>ul>li {
+   display: inline-block;
+   margin-right: 20px;
+   height: 16px;
+}
+
+#share>ul>li:last-of-type {
+   height: 13px;
+}
+
+#share>ul>li>a>img {
+   filter: brightness(250%);
+}
+
+
+
 /* ---------- BLACK THEME - add any elements here that need to change colour ---------- */
 
 body.black {
@@ -688,6 +764,11 @@ body.black .floating-border {
    border-color: black;
 }
 
+body.black .share {
+   color: white;
+   background: black;
+}
+
 /* ---------- Theme Transitions - add any elements here that are included in the theme above ---------- */
 
 body,
@@ -695,7 +776,8 @@ header>.logo,
 header .bottom .social a svg g,
 .mobile-header-bg,
 header .bottom .switch,
-body.black .drawer h3,
-body.black .floating-border {
+.drawer h3,
+.floating-border,
+.share {
    transition: color 1s ease, background-color 1s ease, border-color 1s ease, fill 1s ease;
 }

@@ -16,6 +16,8 @@ $(function() {
    	hashWatch();
    	toggleClose();
    });
+   
+   $('.url').text(window.location.href);
 
 });
 
