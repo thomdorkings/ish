@@ -580,6 +580,10 @@ body.black header .bottom .switch {
    opacity: 1;
 }
 
+body.black .drawer h3 {
+   color: black;
+}
+
 body.black .drawer>.main>.menu {
    color: black;
 }
