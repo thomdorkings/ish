@@ -9,8 +9,12 @@ $(function() {
 	//Icon colour switcher
 	hashWatch();
 	
+	//Close button toggle
+	toggleClose();
+	
 	$(window).on('hashchange', function() {
    	hashWatch();
+   	toggleClose();
    });
 
 });
@@ -27,4 +31,17 @@ function hashWatch() {
    	$('.buttons span').attr('style','');
    	$('.buttons svg').attr('style','');
 	}
+}
+
+function toggleClose() {
+   if(location.hash == '#menu') {
+      $('.button_menu').attr('href','#');
+   } else {
+      $('.button_menu').attr('href','#menu');
+   }
+   if(location.hash == '#search') {
+      $('.button_search').attr('href','#');
+   } else {
+      $('.button_search').attr('href','#search');
+   }
 }
