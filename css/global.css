@@ -697,5 +697,5 @@ header .bottom .social a svg g,
 header .bottom .switch,
 body.black .drawer h3,
 body.black .floating-border {
-   transition: color 1s ease, background-color 1s ease, border-color 1s ease;
+   transition: color 1s ease, background-color 1s ease, border-color 1s ease, fill 1s ease;
 }
