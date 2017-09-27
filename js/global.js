@@ -18,6 +18,21 @@ $(function() {
    });
    
    $('.url').text(window.location.href);
+   
+   $('.subscribe').submit(function (e) {
+        e.preventDefault();
+        $.getJSON(
+        this.action + "?callback=?",
+        $(this).serialize(),
+        function (data) {
+            if (data.Status === 400) {
+                alert('error');
+            } else { // 200
+	            $('.subscribe input').prop('disabled', true);
+	            $('.subscribe button').text('✔︎').prop('disabled', true);
+            }
+        });
+    });
 
 });
 

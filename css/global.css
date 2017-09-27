@@ -573,18 +573,18 @@ main {
 @media only screen and (min-width: 992px) {
    main {
       margin-top: 0;
-      padding: 0px 32.5px 40px 0px !important;
+      padding: 0px 32.5px 0px 0px !important;
    }
 }
 
 @media only screen and (min-width: 1200px) {
    main {
-      padding: 40px 40px 40px 0px !important;
+      padding: 40px 40px 0px 0px !important;
    }
 }
 
 main>.slideshow {
-   padding: 40px 7.5px;
+   padding: 40px 7.5px 15px 7.5px;
    height: 100%;
 }
 
@@ -604,13 +604,14 @@ main>.slideshow>div {
 }
 
 main>div>.tile {
-   margin-bottom: 40px;
-   min-height: 30vh;
-   background: blue;
+   margin-bottom: 15px;
+   display: block;
 }
 
-main>div>.tile:last-of-type {
-   margin-bottom: 0;
+@media only screen and (min-width: 1200px) {
+   main>div>.tile {
+      margin-bottom: 40px;
+   }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -619,6 +620,104 @@ main>div>.tile:last-of-type {
       margin-right: -7.5px;
    }
 }
+
+
+/* ---------- Right scrolling area ---------- */
+
+.feature {
+   height: 500px;
+   background-size: cover;
+   background-position: 50% 50%;
+   position: relative;
+}
+
+.feature>.caption {
+   position: absolute;
+   bottom: 30px;
+   left: 30px;
+   right: 30px;
+   text-align: center;
+   background: white;
+   padding: 30px 20px;
+}
+
+.feature.dark>.caption {
+   background: black;
+   color: white;
+}
+
+.feature>.caption>h4 {
+   margin: 0 0 20px 0;
+   font-size: 1.3em;
+}
+
+.feature>.caption>p {
+   margin: 0;
+   color: #666;
+}
+
+.newsletter {
+   background: #E3DFDC;
+   text-align: center;
+   padding: 40px;
+}
+
+.newsletter>h4 {
+   font-size: 1.2em;
+   margin-top: 0;
+}
+
+.newsletter>p {
+   font-family: 'Calibre';
+   font-weight: normal;
+   color: #666;
+}
+
+.newsletter>form {
+   position: relative;
+   width: 100%;
+   margin-bottom: 0;
+}
+
+.newsletter>form>input {
+   display: inline-block;
+   width: 85%;
+   height: 40px;
+   line-height: 40px;
+   border: none;
+   padding: 0 60px 0 20px;
+   margin: 0;
+}
+
+.newsletter>form>button {
+   display: inline-block;
+   height: 40px;
+   line-height: 40px;
+   width: 15%;
+   margin-left: -5px;
+   padding: 0;
+   position: relative;
+   top: 4px;
+   border: none;
+   -webkit-appearance: none;
+   border-radius: 0;
+   background: url('../img/arrow3.svg') 55% 50% no-repeat black;
+   background-size: auto 60%;
+}
+
+.promo {
+   padding: 100px 40px;
+   background-size: cover;
+   background-position: 50% 50%;
+   color: white;
+   text-align: center;
+}
+
+.promo>h4 {
+   font-size: 1.8em;
+   margin: 0 0 10px 0;
+}
+
 
 /* ---------- Share ---------- */
 
