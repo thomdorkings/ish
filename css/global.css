@@ -447,8 +447,9 @@ header .bottom .small-print a {
    display: inline-block;
    width: 70%;
    height: 100px;
-   padding: 25px;
+   padding: 20px;
    font-size: 0.9em;
+   position: relative;
 }
 
 #search ul.editions>li>a>.text>h4 {
@@ -458,6 +459,16 @@ header .bottom .small-print a {
 
 #search ul.editions>li>a>.text>p {
    margin-top: 5px;
+   padding-right: 30px;
+}
+
+#search ul.editions>li>a>.text>img {
+   position: absolute;
+   right: 10%;
+   top: 35%;
+   transform: rotate(90deg);
+   width: 20px;
+   z-index: 0;
 }
 
 /* ---------- Find a designer drawer ---------- */
