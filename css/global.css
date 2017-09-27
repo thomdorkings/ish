@@ -14,10 +14,14 @@ body {
 	background: whiteFFF;
 }
 
+
 /* ---------- Sidebar ---------- */
 
 header {
-   position: relative;
+   position: fixed !important;
+   top:0;
+   left:0;
+   z-index: 700;
 }
 
 @media only screen and (min-width: 992px) {
@@ -26,7 +30,7 @@ header {
    }
 }
 
-header>.buttons {
+.buttons {
    margin: 0;
    position: fixed;
    top:0;
@@ -34,23 +38,23 @@ header>.buttons {
    z-index: 900;
    padding-left: 20px;
    height: 50px;
+   width: 100%;
 }
 
 @media only screen and (min-width: 992px) {
-   header>.buttons {
-      position: relative;
+   .buttons {
       padding: 20px 0 0 20px;
       height: auto;
    }
 }
 
 @media only screen and (min-width: 1200px) {
-   header>.buttons {
+   .buttons {
       padding: 20px 0 0 30px;
    }
 }
 
-header>.buttons>a {
+.buttons>a {
    height: 50px;
    padding: 20px 0;
    width: 30px;
@@ -60,11 +64,11 @@ header>.buttons>a {
    z-index: 9999;
 }
 
-header>.buttons>a+a {
+.buttons>a+a {
    margin-left: 10px;
 }
 
-header>.buttons>a>span {
+.buttons>a>span {
    display: block;
    height: 2px;
    background: black;
@@ -72,7 +76,7 @@ header>.buttons>a>span {
    transition: background 0.6s ease;
 }
 
-header>.buttons>a>svg {
+.buttons>a>svg {
    display: block;
    height: 15px;
    margin: -1px auto 0 auto;
@@ -112,7 +116,7 @@ header>.logo {
       position: relative;
       max-width: 300px;
       top: auto;
-      margin: 8vh -7.5px 8vh -7.5px;
+      margin: 16vh -7.5px 8vh -7.5px;
    }
 }
 
@@ -538,22 +542,91 @@ header .bottom .small-print a {
    font-weight: 500;
 }
 
+/* ---------- Floating border ---------- */
 
-/* Content area */
+.floating-border {
+   position: fixed;
+   top: 100px;
+   left: 0px;
+   right: 0;
+   bottom: 0;
+   border: 15px solid white;
+   pointer-events: none;
+   z-index: 700;
+   transition: border-color 1s ease;
+}
+
+@media only screen and (min-width: 992px) {
+   .floating-border {
+      top: 0;
+      left: -20px;
+      border-width: 30px;
+   }
+}
+
+@media only screen and (min-width: 1200px) {
+   .floating-border {
+      left: -20px;
+      border-width: 30px;
+   }
+}
+
+
+/* ---------- Content ---------- */
 
 main {
-   margin-top: 90px;
+   margin-top: 85px;
 }
 
 @media only screen and (min-width: 992px) {
    main {
       margin-top: 0;
-      height: 100vh;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
+      padding: 0px 22.5px 30px 0px !important;
    }
 }
 
+@media only screen and (min-width: 1200px) {
+   main {
+      padding: 30px 30px 30px 0px !important;
+   }
+}
+
+main>.slideshow {
+   padding: 30px 7.5px;
+   height: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+   main>.slideshow {
+      position:fixed;
+      z-index: -1;
+      top: 0;
+      left:0 ;
+      padding: 30px 15px 30px 7.5px;
+   }
+}
+
+main>.slideshow>div {
+   background: red;
+   height: 100%;
+}
+
+main>div>.tile {
+   margin-bottom: 30px;
+   min-height: 30vh;
+   background: blue;
+}
+
+main>div>.tile:last-of-type {
+   margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1200px) {
+   main>div>.tile {
+      margin-left: 7.5px;
+      margin-right: -7.5px;
+   }
+}
 
 /* ---------- BLACK THEME - add any elements here that need to change colour ---------- */
 
@@ -562,11 +635,11 @@ body.black {
    color: white;
 }
 
-body.black header>.buttons>a>span {
+body.black .buttons>a>span {
    background: white;
 }
 
-body.black header>.buttons>a>svg {
+body.black .buttons>a>svg {
    fill: white;
 }
 
@@ -611,30 +684,18 @@ body.black .drawer>.main>.dark>ul>li>a:after {
    border-color: white;
 }
 
+body.black .floating-border {
+   border-color: black;
+}
+
 /* ---------- Theme Transitions - add any elements here that are included in the theme above ---------- */
 
 body,
 header>.logo,
 header .bottom .social a svg g,
 .mobile-header-bg,
-header .bottom .switch {
-   transition: all 1s ease;
-}
-
-
-/* ---------- Testing fixed height divs on homepage ---------- */
-
-main>div>div {
-   background: #ccc;
-   margin: 3vh 1vh;
-   height: 94vh;
-}
-
-main>div+div>div {
-   height: 61vh;
-}
-
-main>div+div>div+div {
-   margin-top: 3vh;
-   height: 30vh;
+header .bottom .switch,
+body.black .drawer h3,
+body.black .floating-border {
+   transition: color 1s ease, background-color 1s ease, border-color 1s ease;
 }
