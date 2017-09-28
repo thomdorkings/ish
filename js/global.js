@@ -6,6 +6,8 @@ $(function() {
    	$('body').toggleClass('black');
 	});
 	
+	$('.slider').slick();
+	
 	//Icon colour switcher
 	hashWatch();
 	

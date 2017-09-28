@@ -558,7 +558,7 @@ header .bottom .small-print a {
 @media only screen and (min-width: 992px) {
    .floating-border {
       top: 0;
-      left: -20px;
+      left: -32.5px;
       border-width: 40px;
    }
 }
@@ -585,23 +585,87 @@ main {
 
 main>.slideshow {
    padding: 40px 7.5px 15px 7.5px;
-   height: 100%;
+   height: 90%;
 }
 
 @media only screen and (min-width: 1200px) {
    main>.slideshow {
       position:fixed;
-      z-index: -1;
+      height: 100%;
       top: 0;
       left:0 ;
       padding: 40px 30px 40px 7.5px;
    }
 }
 
-main>.slideshow>div {
-   background: red;
+main>.slideshow>.slider,
+main>.slideshow>.slider .slick-slide {
    height: 100%;
+   position: relative;
+   outline: none;
 }
+
+main>.slideshow>.slider .slick-slide {
+   cursor: -webkit-grab;
+   background-size: cover;
+   background-position: 50% 50%;
+}
+
+main>.slideshow>.slider .slick-slide:active {
+   cursor: -webkit-grabbing;
+}
+
+main>.slideshow>.slider .caption {
+   bottom: 60px;
+   padding: 40px 10%;
+}
+
+main>.slideshow>.slider .caption>h4 {
+   font-size: 1.4em;
+}
+
+@media only screen and (min-width: 992px) {
+   main>.slideshow>.slider .caption>h4 {
+      font-size: 2em;
+   }
+}
+
+
+main>.slideshow>.slider .number {
+   position: absolute;
+   bottom: 20px;
+   left: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+   margin: 0;
+}
+
+main>.slideshow>.slider .slick-prev,
+main>.slideshow>.slider .slick-next {
+   position: absolute;
+   bottom: 20px;
+   z-index: 500;
+   cursor: pointer;
+   -webkit-appearance: none;
+   border: none;
+   text-indent: -9999em;
+   width: 60px;
+   outline: none;
+}
+
+main>.slideshow>.slider .slick-prev {
+   left: 30px;
+   background: url('../img/arrow-left.svg') 0% 50% no-repeat;
+   background-size: auto 100%;
+}
+
+main>.slideshow>.slider .slick-next {
+   right: 30px;
+   background: url('../img/arrow-right.svg') 100% 50% no-repeat;
+   background-size: auto 100%;
+}
+
 
 main>div>.tile {
    margin-bottom: 15px;
@@ -631,7 +695,7 @@ main>div>.tile {
    position: relative;
 }
 
-.feature>.caption {
+.caption {
    position: absolute;
    bottom: 30px;
    left: 30px;
@@ -646,7 +710,7 @@ main>div>.tile {
    color: white;
 }
 
-.feature>.caption>h4 {
+.caption>h4 {
    margin: 0 0 20px 0;
    font-size: 1.3em;
    color: black;
@@ -656,7 +720,7 @@ main>div>.tile {
    color: white;
 }
 
-.feature>.caption>p {
+.caption>p {
    margin: 0;
    color: #666;
 }
@@ -772,7 +836,7 @@ main>div>.tile {
    transform: rotate(-90deg) translateX(21%);
    width: auto;
    padding: 15px 40px;
-   margin-right: -40px;
+   margin-right: -42.5px;
 }
 
 .share {
