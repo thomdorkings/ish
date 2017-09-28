@@ -728,6 +728,21 @@ main>div>.tile {
    color: #999;
 }
 
+.instagram {
+   text-align: center;
+}
+
+.instagram>a>h4 {
+   margin: 20px 0 5px 0;
+   color: #666;
+}
+
+.instagram>a>p {
+   font-style: italic;
+   font-size: 1.3em;
+   margin: 0 0 60px 0;
+}
+
 
 /* ---------- Share ---------- */
 
